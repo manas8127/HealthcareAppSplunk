@@ -40,16 +40,9 @@ for idx, row in df.iterrows():
         "sourcetype": "_json",
         "index": "main",
         "source": "ecg_stream",
-        "host": "manas_laptop"
+        "host": "<HEC-URL-NAME>"
     }
 
-    # payload = {
-    #     "event": json.dumps(row_dict),  # Serialize inner dict
-    #     "sourcetype": "_json",
-    #     "index": "main",
-    #     "source": "ecg_stream",
-    #     "host": "scde-cxgwzw5yl1r0ayqbu"
-    # }
 
     try:
         response = requests.post(SPLUNK_HEC_URL, headers=headers, data=json.dumps(payload), verify=True)
